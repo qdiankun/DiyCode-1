@@ -47,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity
 
     @Override protected void onResume() {
         Log.d(TAG, "onResume");
-        super.onStart();
+        super.onResume();
         if (getPresenter() != null && getPresenter().size() != 0) {
             for (BasePresenter basePresenter : getPresenter()) {
                 basePresenter.start();
@@ -66,7 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity
         } else {
             Log.d(TAG, "onPause getPresenter() == null");
         }
-        super.onStop();
+        super.onPause();
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
